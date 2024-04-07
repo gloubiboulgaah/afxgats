@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AFXGATS</title>
+        <link rel="stylesheet" href="css/index.css" />
+    </head>
+    <body>
+        <div class="center-container">
+            <div class="row-container">
+                <img class="para-img T1" src="img/paraT1.png" alt="" />
+                <img class="para-img T2" src="img/paraT2.png" alt="" />
+            </div>
+            <div class="row-container">
+                <img class="para-img B1" src="img/paraB1.png" alt="" />
+                <img class="para-img B2" src="img/paraB2.png" alt="" />
+            </div>
+        </div>
+    </body>
+    <script>
+        const img = document.querySelectorAll("img");
+        img.forEach((img) => {
+            img.ondragstart = () => {
+                return false;
+            };
+        });
+        const paraImgs = document.querySelectorAll(".para-img");
+        const T1 = document.querySelector(".T1");
+        const T2 = document.querySelector(".T2");
+        const B1 = document.querySelector(".B1");
+        const B2 = document.querySelector(".B2");
+
+        paraImgs.forEach((paraImg) => {
+            paraImg.addEventListener("mouseover", () => {
+                if (paraImg === T1) {
+                    T1.src = "img/paraT1n.png";
+                } else if (paraImg === T2) {
+                    T2.src = "img/paraT2n.png";
+                } else if (paraImg === B1) {
+                    B1.src = "img/paraB1n.png";
+                } else if (paraImg === B2) {
+                    B2.src = "img/paraB2n.png";
+                }
+            });
+            paraImg.addEventListener("mouseout", () => {
+                if (paraImg === T1) {
+                    T1.src = "img/paraT1.png";
+                } else if (paraImg === T2) {
+                    T2.src = "img/paraT2.png";
+                } else if (paraImg === B1) {
+                    B1.src = "img/paraB1.png";
+                } else if (paraImg === B2) {
+                    B2.src = "img/paraB2.png";
+                }
+            });
+            paraImg.addEventListener("click", () => {
+                if (paraImg === T1) {
+                    window.location.href =
+                        "https://open.spotify.com/intl-fr/album/5tRLViYLfcJLsNPY9yrwOe?si=4Yy1TrY9S0-693DcpUmH4Q";
+                } else if (paraImg === T2) {
+                    window.location.href =
+                        "https://on.soundcloud.com/kiixa7yJQyDg1s5f7";
+                } else if (paraImg === B1) {
+                    window.location.href =
+                        "https://youtube.com/playlist?list=OLAK5uy_k1sCvdPzv8S9G4LLSIriwaWedV-zF93tA&si=mrXRrwMW9l-BBOrJ";
+                } else if (paraImg === B2) {
+                    window.location.href = "https://www.instagram.com/afxgats/";
+                }
+            });
+        });
+    </script>
+</html>
